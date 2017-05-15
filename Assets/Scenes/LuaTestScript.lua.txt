@@ -1,0 +1,27 @@
+function awake()
+	print("lua awake...")
+	local text = nil
+	local count = 0;
+	-- 由编辑器注入了ShowText对象(GameObject), 再通过其找出Text组件, 进行赋值
+	text = ShowText:GetComponent("Text")
+	text.text = "HelloWorld"
+
+	-- ButtonEcho 同理
+	ButtonEcho:GetComponent("Button").onClick:AddListener(function()
+		print("clicked, you input is ")
+	end)
+end
+
+
+function start()
+	print("lua start...")
+end
+
+function update()
+	print("lua update...")
+end
+
+function ondestroy()
+    print("lua destroy")
+end
+
